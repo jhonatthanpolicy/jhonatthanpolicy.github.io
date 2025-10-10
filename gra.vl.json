@@ -1,0 +1,14 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Google's stock price over time.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/CORESTICKM159SFRBATL%20FINAL%20HD.csv",
+    "format": {"type": "dsv", "delimiter": ";"}
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "observation_date", "type": "temporal"},
+    "y": {"field": "CORESTICKM159SFRBATL", "type": "quantitative"}
+  },
+  "config": {}
+}
