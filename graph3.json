@@ -16,10 +16,6 @@
   "mark": { "type": "line", "color": "#f4134d", "strokeWidth": 2 },
   "encoding": {
     "x": { "field": "date", "type": "temporal", "axis": { "title": null, "grid": false } },
-    "y": { "field": "value", "type": "quantitative", "axis": { "title": null, "grid": false } },
-    "tooltip": [
-      { "field": "date", "type": "temporal" },
-      { "field": "value", "type": "quantitative" }
-    ]
+    "y": { "field": "value", "type": "quantitative", "axis": { "title": null, "grid": false } }
   }
 }
