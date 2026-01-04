@@ -1,19 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
-    "text": "Population",
-    "subtitle": "Total | Source: JSB (WB) through ECO API",
+    "text": "Population (Japan)",
     "anchor": "start",
+    "subtitle": "Total | Source: JSB (WB) through ECO API",
     "fontSize": 14,
     "subtitleFontSize": 12
   },
-  "width": 500,
+  "width": "container",
   "height": 250,
   "data": {
     "url": "https://raw.githubusercontent.com/EconomicsObservatory/api/main/cached_data/jpn/popu.json",
     "format": { "type": "json" }
   },
-  "mark": { "type": "point", "color": "#f4134d" },
+  "mark": { "type": "line", "color": "#f4134d", "strokeWidth": 2 },
   "encoding": {
     "x": { "field": "date", "type": "temporal", "axis": { "title": null, "grid": false } },
     "y": { "field": "value", "type": "quantitative", "axis": { "title": null, "grid": false } },
