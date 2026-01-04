@@ -1,45 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>My Portfolio</title>
+    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+    <section>
+        <div class="chart-description">
+            <h2>Section 1: A basic chart</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
+                As a first example, we're using a basic chart from our repo.
+            </p>
+        </div>
+        <figure id="Location1"></figure>
+        <figure id="Location2"></figure>
+        <figure id="Location3"></figure>
+        <figure id="Location4"></figure><!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
 
-  <!-- Vega libraries -->
-<script src="https://cdn.jsdelivr.net/npm/vega@5.25.0/build/vega.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@6.0.0/build/vega-lite.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0/build/vega-embed.min.js"></script>
-
-
-  <link rel="stylesheet" href="Example3.css">
-
-  <style>
-    body { font-family: Arial, sans-serif; }
-    figure { margin-bottom: 40px; }
-  </style>
-</head>
-
-<body>
-
-  <h1>Heyyyy</h1>
-  <p>Your Name</p>
-
-  <figure id="Location1"></figure>
-  <figure id="Location2"></figure>
-  <figure id="Location3"></figure>
+    <!-- Do you want to add more sections? -->
+        <!-- Try copying pasting the section above -->
+        <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
+        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
 
 
-<script>
-  
- console.log("Vega-Lite version on page:", vegaLite.version);
+    <!-- This is a script, it's a way to run JavaScript code on the page -->
+    <script>
+        // This is a comment in JavaScript - it's a different language to HTML and CSS
 
-  vegaEmbed('#Location1', './Chart1.json?v=1').catch(e => console.error('1', e));
-  vegaEmbed('#Location2', './chart2.json?v=1').catch(e => console.error('2', e));
+        let figure_1_spec = "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/Chart1.json";
+        let figure_2_spec = "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/chart2.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_3_spec = "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/graph3.json";
+        let figure_4_spec = "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/Gra%202.json"// You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
 
-  // IMPORTANT: cache-bust graph3.json so you definitely get the latest
-  vegaEmbed('#Location3', './graph3.json?v=' + Date.now())
-    .catch(e => console.error('3 (graph3) ERROR:', e));
-
-
-
-</body>
-</html>
+        vegaEmbed('#Location1', figure_1_spec) 
+        vegaEmbed('#Location2', figure_2_spec)
+        vegaEmbed('#Location3', figure_3_spec)
+        vegaEmbed('#Location4', figure_4_spec)// We're using the vegaEmbed function to put a graph in the element with id figure_1
