@@ -9,8 +9,8 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-  <!-- CSS (make sure this filename exists EXACTLY) -->
-  <link rel="stylesheet" href="example3.css">
+  <!-- CSS: ensure case matches the file in the repo -->
+  <link rel="stylesheet" href="Example3.css">
 
   <style>
     body { font-family: Arial, sans-serif; }
@@ -29,23 +29,17 @@
   <figure id="Location4"></figure>
 
 <script>
-  vegaEmbed("#Location1",
-    "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Chart1.json"
-  );
+  // Use relative paths so GitHub Pages serves the JSON from the same origin
+  // Add .catch to surface errors in the console
+  vegaEmbed("#Location1", "./Chart1.json").catch(function(err){ console.error("Location1 error:", err); });
 
-  vegaEmbed("#Location2",
-    "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/chart2.json"
-  );
+  vegaEmbed("#Location2", "./chart2.json").catch(function(err){ console.error("Location2 error:", err); });
 
-  vegaEmbed("#Location3",
-    "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/graph3.json"
-  );
+  vegaEmbed("#Location3", "./graph3.json").catch(function(err){ console.error("Location3 error:", err); });
 
-  vegaEmbed("#Location4",
-    "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Gra%202.json"
-  );
+  // If you rename the file to Gra2.json, use "./Gra2.json" here.
+  vegaEmbed("#Location4", "./Gra%202.json").catch(function(err){ console.error("Location4 error:", err); });
 </script>
-
 
 </body>
 </html>
