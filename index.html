@@ -29,17 +29,12 @@
   <figure id="Location4"></figure>
 
 <script>
-  // Use relative paths so GitHub Pages serves the JSON from the same origin
-  // Add .catch to surface errors in the console
-  vegaEmbed("#Location1", "./Chart1.json").catch(function(err){ console.error("Location1 error:", err); });
-
-  vegaEmbed("#Location2", "./chart2.json").catch(function(err){ console.error("Location2 error:", err); });
-
-  vegaEmbed("#Location3", "./graph3.json").catch(function(err){ console.error("Location3 error:", err); });
-
-  // If you rename the file to Gra2.json, use "./Gra2.json" here.
-  vegaEmbed("#Location4", "./Gra%202.json").catch(function(err){ console.error("Location4 error:", err); });
+  vegaEmbed('#Location1', './Chart1.json').catch(e => console.error('1', e));
+  vegaEmbed('#Location2', './chart2.json').catch(e => console.error('2', e));
+  vegaEmbed('#Location3', './graph3.json').catch(e => console.error('3', e));
+  vegaEmbed('#Location4', './Gra%202.json').catch(e => console.error('4', e));
 </script>
+
 
 </body>
 </html>
