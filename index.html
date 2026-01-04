@@ -20,7 +20,7 @@
 
 <body>
 
-  <h1>Heyyy</h1>
+  <h1>Heyyyy</h1>
   <p>Your Name</p>
 
   <figure id="Location1"></figure>
@@ -29,10 +29,17 @@
 
 
 <script>
-  vegaEmbed('#Location1', './Chart1.json').catch(e => console.error('1', e));
-  vegaEmbed('#Location2', './chart2.json').catch(e => console.error('2', e));
-  vegaEmbed('#Location3', './graph3.json').catch(e => console.error('3', e));
+  
+ console.log("Vega-Lite version on page:", vegaLite.version);
 
+  vegaEmbed('#Location1', './Chart1.json?v=1').catch(e => console.error('1', e));
+  vegaEmbed('#Location2', './chart2.json?v=1').catch(e => console.error('2', e));
+
+  // IMPORTANT: cache-bust graph3.json so you definitely get the latest
+  vegaEmbed('#Location3', './graph3.json?v=' + Date.now())
+    .catch(e => console.error('3 (graph3) ERROR:', e));
+
+  vegaEmbed('#Location4', './Gra%202.json?v=1').catch(e => console.error('4', e));
 </script>
 
 
