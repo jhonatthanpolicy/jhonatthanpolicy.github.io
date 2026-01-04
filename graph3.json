@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
     "text": "Population (Japan)",
-    "anchor": "start",
     "subtitle": "Total | Source: JSB (WB) through ECO API",
+    "anchor": "start",
     "fontSize": 14,
     "subtitleFontSize": 12
   },
