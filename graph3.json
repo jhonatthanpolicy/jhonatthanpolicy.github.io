@@ -1,54 +1,25 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "title": {
     "text": "Population",
-    "anchor": "start",
     "subtitle": "Total | Source: JSB (WB) through ECO API",
+    "anchor": "start",
     "fontSize": 14,
-    "subtitleFontSize": 12,
-    "color": "#000000",
-    "subtitleColor": "#000000"
+    "subtitleFontSize": 12
   },
+  "width": 500,
   "height": 250,
-  "width": "container",
-  "autosize": {
-    "type": "fit",
-    "contains": "padding"
-  },
-  "background": "#ffffff",
-  "view": {
-    "fill": "#ffffff",
-    "strokeOpacity": 0
-  },
   "data": {
-    "url": "https://api.economicsobservatory.com/jpn/popu?vega",
-    "format": {
-      "type": "json"
-    }
+    "url": "https://raw.githubusercontent.com/EconomicsObservatory/api/main/cached_data/jpn/popu.json",
+    "format": { "type": "json" }
   },
-  "mark": {
-    "type": "point",
-    "color": "#f4134d",
-    "strokeWidth": 2
-  },
+  "mark": { "type": "point", "color": "#f4134d" },
   "encoding": {
-    "x": {
-      "field": "date",
-      "type": "temporal",
-      "axis": {
-        "title": "",
-        "titleColor": "#122B39",
-        "grid": false
-      }
-    },
-    "y": {
-      "field": "value",
-      "type": "quantitative",
-      "axis": {
-        "title": "",
-        "titleColor": "#122B39",
-        "grid": false
-      }
-    }
+    "x": { "field": "date", "type": "temporal", "axis": { "title": null, "grid": false } },
+    "y": { "field": "value", "type": "quantitative", "axis": { "title": null, "grid": false } },
+    "tooltip": [
+      { "field": "date", "type": "temporal" },
+      { "field": "value", "type": "quantitative" }
+    ]
   }
 }
