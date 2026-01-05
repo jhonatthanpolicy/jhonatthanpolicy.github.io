@@ -1,0 +1,110 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "background": "#fbf6f0",
+  "title": {
+    "text": "¿CÓMO AUMENTÓ LA POBLACIÓN?",
+    "subtitle": "Cifras en millones de personas (Colombia, World Bank)",
+    "anchor": "start",
+    "color": "#0c0c0c",
+    "subtitleColor": "#0c0c0c"
+  },
+
+  "data": {
+    "url": "https://api.worldbank.org/v2/country/CO/indicator/SP.POP.TOTL?format=json&per_page=20000",
+    "format": { "type": "json", "property": "1" }
+  },
+
+  "transform": [
+    { "filter": "datum.value != null" },
+    { "calculate": "toDate(datum.date + '-01-01')", "as": "date_parsed" },
+    { "calculate": "datum.value / 1000000", "as": "pop_m" }
+  ],
+
+  "layer": [
+    {
+      "mark": { "type": "area", "color": "#e5d5b4", "opacity": 0.35 },
+      "encoding": {
+        "x": {
+          "field": "date_parsed",
+          "type": "temporal",
+          "title": "Año",
+          "axis": {
+            "format": "%Y",
+            "grid": false,
+            "labelColor": "#0c0c0c",
+            "titleColor": "#0c0c0c"
+          }
+        },
+        "y": {
+          "field": "pop_m",
+          "type": "quantitative",
+          "title": "Millones",
+          "axis": {
+            "grid": true,
+            "gridColor": "#e6dfd4",
+            "labelColor": "#0c0c0c",
+            "titleColor": "#0c0c0c",
+            "format": ".0f",
+            "tickCount": 12
+          }
+        }
+      }
+    },
+
+    {
+      "mark": { "type": "line", "color": "#d5025d", "strokeWidth": 4 },
+      "encoding": {
+        "x": { "field": "date_parsed", "type": "temporal" },
+        "y": { "field": "pop_m", "type": "quantitative" },
+        "tooltip": [
+          { "field": "date_parsed", "type": "temporal", "format": "%Y", "title": "Año" },
+          { "field": "pop_m", "type": "quantitative", "format": ".1f", "title": "Población (millones)" }
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "indexof([1964,1974,1984,1994,2004,2014,2024], year(datum.date_parsed)) >= 0"
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "color": "#6a6a69",
+            "strokeDash": [6, 6],
+            "size": 2
+          },
+          "encoding": {
+            "x": { "field": "date_parsed", "type": "temporal" }
+          }
+        },
+        {
+          "mark": {
+            "type": "point",
+            "filled": true,
+            "size": 140,
+            "color": "#d5025d",
+            "stroke": "#0c0c0c",
+            "strokeWidth": 1.5
+          },
+          "encoding": {
+            "x": { "field": "date_parsed", "type": "temporal" },
+            "y": { "field": "pop_m", "type": "quantitative" },
+            "tooltip": [
+              { "field": "date_parsed", "type": "temporal", "format": "%Y", "title": "Año" },
+              { "field": "pop_m", "type": "quantitative", "format": ".1f", "title": "Población (millones)" }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "domain": true }
+  }
+}
