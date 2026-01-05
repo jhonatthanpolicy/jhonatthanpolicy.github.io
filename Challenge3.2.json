@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Japan Population",
+    "anchor": "start",
+    "subtitle": "Total | Source: JSB (WB) through ECO API",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "color": "#000000",
+    "subtitleColor": "#000000"
+  },
+  "width": 1000,
+  "height": 450,
+  "padding": 10,
+  "background": "#ffffff",
+  "view": { "strokeOpacity": 0 },
+
+  "data": {
+    "url": "https://api.economicsobservatory.com/jpn/popu?vega",
+    "format": { "type": "json" }
+  },
+
+  "transform": [
+    { "filter": "year(datum.date) >= 1980 && year(datum.date) <= 2023" }
+  ],
+
+  "layer": [
+    {
+      "mark": { "type": "line", "color": "#f4134d", "strokeWidth": 2 },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "axis": {
+            "title": "",
+            "grid": false,
+            "tickCount": { "interval": "year", "step": 1 },
+            "format": "%Y",
+            "labelAngle": -45,
+            "labelFontSize": 10,
+            "labelOverlap": false
+          }
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "axis": { "title": "", "grid": false, "labelFontSize": 12 },
+          "scale": { "domain": [80000000, 140000000] }
+        },
+        "tooltip": [
+          { "field": "date", "type": "temporal", "title": "Year", "format": "%Y" },
+          { "field": "value", "type": "quantitative", "title": "Population", "format": "," }
+        ]
+      }
+    },
+
+    {
+      "transform": [{ "filter": "year(datum.date) == 2022" }],
+      "mark": { "type": "rule", "color": "black", "strokeDash": [6, 6], "size": 2 },
+      "encoding": {
+        "y": { "field": "value", "type": "quantitative" }
+      }
+    },
+
+    {
+      "transform": [{ "filter": "year(datum.date) == 2022" }],
+      "mark": { "type": "text", "align": "left", "dx": 6, "dy": -6, "fontSize": 12, "color": "black" },
+      "encoding": {
+        "y": { "field": "value", "type": "quantitative" },
+        "x": { "value": 0 },
+        "text": { "value": "2022 level" }
+      }
+    }
+  ]
+}
