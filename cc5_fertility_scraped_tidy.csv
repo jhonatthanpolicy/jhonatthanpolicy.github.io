@@ -1,0 +1,467 @@
+country,fertility_rate
+Niger,6.7
+Chad,6.2
+Somalia,6.2
+DR Congo,6.1
+Central African Republic,5.9
+Mali,5.9
+Angola,5.2
+Nigeria,5.1
+Burundi,5.0
+Benin,4.9
+Burkina Faso,4.7
+Tanzania,4.7
+Gambia,4.6
+Mozambique,4.6
+Afghanistan,4.5
+Uganda,4.5
+Cameroon,4.4
+Mayotte (France),4.4
+Sudan,4.4
+Ivory Coast,4.3
+Guinea,4.3
+Mauritania,4.3
+Senegal,4.3
+South Sudan,4.3
+Equatorial Guinea,4.2
+Togo,4.2
+Zambia,4.2
+Congo,4.1
+Ethiopia,4.1
+Liberia,4.0
+Comoros,3.9
+Guinea-Bissau,3.9
+Samoa,3.9
+Sierra Leone,3.9
+Solomon Islands,3.9
+Eritrea,3.8
+Madagascar,3.8
+Malawi,3.8
+São Tomé and Príncipe,3.8
+Rwanda,3.7
+Vanuatu,3.7
+Yemen,3.7
+Gabon,3.5
+Ghana,3.5
+French Guiana (France),3.5
+Iraq,3.4
+Pakistan,3.4
+Palestine (Gaza Strip and West Bank),3.4
+Zimbabwe,3.4
+Kenya,3.3
+Kiribati,3.3
+Namibia,3.2
+Papua New Guinea,3.2
+Tonga,3.2
+Tajikistan,3.1
+Kazakhstan,3.0
+Lesotho,3.0
+Timor-Leste,3.0
+Egypt,2.9
+Israel,2.9
+Kyrgyzstan,2.9
+Algeria,2.8
+Botswana,2.8
+Djibouti,2.8
+Eswatini,2.8
+Haiti,2.8
+Jordan,2.8
+Mongolia,2.8
+Uzbekistan,2.8
+Marshall Islands,2.7
+Micronesia,2.7
+Philippines,2.7
+Syria,2.7
+Bolivia,2.6
+Guam (US),2.6
+Oman,2.6
+Turkmenistan,2.6
+Fiji,2.5
+Guatemala,2.4
+Guyana,2.4
+Laos,2.4
+Libya,2.4
+Paraguay,2.4
+Saudi Arabia,2.4
+Cambodia,2.3
+Honduras,2.3
+Morocco,2.3
+Nicaragua,2.3
+Panama,2.3
+Seychelles,2.3
+South Africa,2.3
+Suriname,2.3
+Western Sahara,2.3
+World,2.3
+Population replacement,2.3
+Dominican Republic,2.2
+Indonesia,2.2
+Peru,2.2
+Réunion (France),2.2
+Venezuela,2.2
+Georgia,2.1
+Kuwait,2.1
+Lebanon,2.1
+Monaco,2.1
+Myanmar (Burma),2.1
+Tunisia,2.1
+U.S. Virgin Islands (US),2.1
+Bangladesh,2.0
+Belize,2.0
+Ecuador,2.0
+Grenada,2.0
+Guadeloupe (France),2.0
+India,2.0
+Nepal,2.0
+New Caledonia (France),2.0
+Sri Lanka,2.0
+Argentina,1.9
+Cape Verde,1.9
+Martinique (France),1.9
+Turkey,1.9
+Vietnam,1.9
+Bahrain,1.8
+Brunei,1.8
+El Salvador,1.8
+France (Metropolitan France),1.8
+Ireland,1.8
+Malaysia,1.8
+Mexico,1.8
+Moldova,1.8
+New Zealand,1.8
+North Korea,1.8
+Qatar,1.8
+Saint Vincent and the Grenadines,1.8
+Azerbaijan,1.7
+Colombia,1.7
+Czech Republic,1.7
+Denmark,1.7
+Estonia,1.7
+Iceland,1.7
+Iran,1.7
+Maldives,1.7
+Montenegro,1.7
+French Polynesia (France),1.7
+Romania,1.7
+Sweden,1.7
+United States,1.7
+Antigua and Barbuda,1.6
+Armenia,1.6
+Australia,1.6
+Barbados,1.6
+Belgium,1.6
+Brazil,1.6
+Bulgaria,1.6
+Curaçao (Netherlands),1.6
+Dominica,1.6
+Hungary,1.6
+Netherlands,1.6
+Latvia,1.6
+Lithuania,1.6
+Slovakia,1.6
+Slovenia,1.6
+Trinidad and Tobago,1.6
+United Kingdom,1.6
+Austria,1.5
+Belarus,1.5
+Canada,1.5
+Chile,1.5
+Costa Rica,1.5
+Germany,1.5
+Kosovo,1.5
+Liechtenstein,1.5
+Norway,1.5
+Poland,1.5
+Russia,1.5
+Saint Kitts and Nevis,1.5
+Serbia,1.5
+Switzerland,1.5
+Uruguay,1.5
+Albania,1.4
+Bahamas,1.4
+Bhutan,1.4
+Croatia,1.4
+Cuba,1.4
+Finland,1.4
+Greece,1.4
+Luxembourg,1.4
+Mauritius,1.4
+North Macedonia,1.4
+Portugal,1.4
+Saint Lucia,1.4
+United Arab Emirates,1.4
+Bosnia and Herzegovina,1.3
+Cyprus,1.3
+Italy,1.3
+Jamaica,1.3
+Japan,1.3
+Puerto Rico (US),1.3
+Spain,1.3
+Thailand,1.3
+Ukraine,1.3
+Aruba (Netherlands),1.2
+China (mainland only),1.2
+Malta,1.2
+Andorra,1.1
+Republic of China (Taiwan),1.1
+Macau (China),1.1
+San Marino,1.1
+Singapore,1.0
+South Korea,0.9
+Hong Kong (China),0.8
+World,2.3
+Africa,4.2
+Oceania,2.1
+Asia,1.9
+Americas,1.8
+Europe,1.5
+Middle Africa,5.6
+Western Africa,4.9
+Eastern Africa,4.2
+Northern Africa,3.0
+Central Asia,2.9
+Western Asia,2.6
+Southern Africa,2.4
+South Asia,2.2
+Oceania,2.1
+Southeast Asia,2.1
+Caribbean,2.0
+Central America,1.9
+Latin America and the Caribbean,1.8
+South America,1.8
+Northern America,1.6
+Northern Europe,1.6
+Western Europe,1.6
+Eastern Europe,1.5
+Southern Europe,1.3
+East Asia,1.2
+Country,2024.0
+Niger,6.64
+Angola,5.7
+DR Congo,5.49
+Mali,5.35
+Benin,5.34
+Chad,5.24
+Uganda,5.17
+Somalia,5.12
+South Sudan,5.09
+Burundi,4.9
+Guinea,4.78
+Mozambique,4.66
+Guinea-Bissau,4.62
+Nigeria,4.52
+Sudan,4.47
+Cameroon,4.44
+Afghanistan,4.43
+Zambia,4.42
+Tanzania,4.27
+Togo,4.13
+Equatorial Guinea,4.12
+Senegal,4.06
+Burkina Faso,4.02
+Timor-Leste,3.98
+Central African Republic,3.94
+Liberia,3.93
+Ethiopia,3.84
+Papua New Guinea,3.79
+Congo,3.79
+Sierra Leone,3.61
+Tajikistan,3.56
+Ghana,3.56
+Gambia,3.52
+West Bank ( Palestine),3.49
+Madagascar,3.47
+Zimbabwe,3.47
+Eritrea,3.43
+Mauritania,3.4
+Ivory Coast,3.4
+Pakistan,3.32
+São Tomé and Príncipe,3.31
+Gaza Strip ( Palestine),3.26
+Gabon,3.21
+Malawi,3.19
+Kenya,3.16
+Rwanda,3.14
+Iraq,3.1
+Libya,3.0
+Algeria,2.94
+Israel,2.92
+Namibia,2.89
+Jordan,2.87
+Lesotho,2.85
+Yemen,2.82
+Tuvalu,2.78
+Solomon Islands,2.77
+Uzbekistan,2.76
+Philippines,2.75
+Guam (US),2.73
+Syria,2.69
+Marshall Islands,2.67
+Tonga,2.65
+Egypt,2.65
+Oman,2.64
+Comoros,2.61
+Kazakhstan,2.58
+Northern Mariana Islands (US),2.56
+Nauru,2.55
+Vanuatu,2.53
+Guatemala,2.52
+Kyrgyzstan,2.45
+Haiti,2.44
+Eswatini,2.37
+Panama,2.35
+Botswana,2.34
+Honduras,2.33
+Samoa,2.33
+Population replacement,2.3
+South Africa,2.27
+Faroe Islands (Denmark),2.27
+Morocco,2.25
+Laos,2.24
+Kuwait,2.21
+Ecuador,2.21
+Fiji,2.21
+Bolivia,2.2
+Micronesia,2.19
+Venezuela,2.18
+Cambodia,2.17
+Argentina,2.15
+Peru,2.15
+Kiribati,2.15
+Dominican Republic,2.15
+Sri Lanka,2.13
+Djibouti,2.11
+Cape Verde,2.1
+Bangladesh,2.07
+American Samoa (US),2.06
+Jamaica,2.05
+Guyana,2.05
+Belize,2.05
+India,2.03
+Vietnam,2.03
+Turkmenistan,2.02
+Cook Islands (self-governing country in free association with New Zealand),2.02
+El Salvador,2.02
+Dominica,2.01
+Sint Maarten (Netherlands),1.97
+U.S. Virgin Islands (US),1.97
+Burma (Myanmar),1.97
+Indonesia,1.96
+Curaçao (Netherlands),1.96
+Georgia,1.95
+Iceland,1.94
+Colombia,1.94
+Tunisia,1.93
+Antigua and Barbuda,1.93
+Iran,1.91
+Grenada,1.9
+Turkey,1.9
+Qatar,1.9
+France,1.9
+Suriname,1.89
+Gibraltar (UK),1.89
+Greenland (Denmark),1.88
+Bermuda (UK),1.88
+Paraguay,1.88
+Isle of Man (UK),1.88
+Mongolia,1.87
+Kosovo,1.87
+Saudi Arabia,1.87
+New Zealand,1.85
+Nepal,1.85
+United States,1.84
+Nicaragua,1.83
+New Caledonia (France),1.83
+Cayman Islands (UK),1.82
+Aruba (Netherlands),1.82
+North Korea,1.81
+Seychelles,1.81
+Saint Martin (France),1.8
+Montenegro,1.8
+Mexico,1.79
+French Polynesia (France),1.79
+Denmark,1.77
+Belgium,1.76
+Saint Kitts and Nevis,1.76
+Bhutan,1.76
+Chile,1.75
+Uruguay,1.75
+Finland,1.74
+Brazil,1.74
+Saint Vincent and the Grenadines,1.74
+Brunei,1.73
+Czech Republic,1.73
+Australia,1.73
+Malaysia,1.73
+Anguilla (UK),1.72
+Ireland,1.72
+Lebanon,1.71
+Wallis and Futuna (France),1.71
+Saint Lucia,1.71
+Cuba,1.71
+Barbados,1.7
+Turks and Caicos Islands (UK),1.7
+Maldives,1.7
+Palau,1.7
+Azerbaijan,1.69
+Liechtenstein,1.69
+Sweden,1.67
+Jersey (UK),1.66
+Bahrain,1.65
+Armenia,1.65
+Saint Barthélemy (France),1.64
+Trinidad and Tobago,1.63
+Luxembourg,1.63
+Romania,1.63
+United Kingdom,1.63
+Estonia,1.62
+Lithuania,1.62
+Netherlands,1.61
+"Saint Helena, Ascension and Tristan da Cunha (UK)",1.61
+United Arab Emirates,1.61
+Saint Pierre and Miquelon (France),1.6
+Slovakia,1.6
+Slovenia,1.6
+Hungary,1.6
+Switzerland,1.59
+Guernsey (UK),1.59
+Canada,1.58
+Germany,1.58
+Norway,1.57
+Latvia,1.55
+China,1.55
+Albania,1.55
+San Marino,1.54
+Monaco,1.54
+Thailand,1.54
+North Macedonia,1.53
+Russia,1.52
+Austria,1.52
+Malta,1.51
+Bulgaria,1.51
+Cyprus,1.49
+Andorra,1.47
+Serbia,1.46
+Croatia,1.46
+Portugal,1.45
+Belarus,1.45
+Bahamas,1.44
+Costa Rica,1.43
+Greece,1.41
+Japan,1.4
+British Virgin Islands (UK),1.38
+Bosnia and Herzegovina,1.38
+Mauritius,1.36
+Montserrat (UK),1.33
+Poland,1.32
+Spain,1.3
+Italy,1.26
+Puerto Rico (US),1.26
+Moldova,1.26
+Macau (China),1.24
+Hong Kong (China),1.24
+Ukraine,1.22
+Singapore,1.17
+South Korea,1.12
+Republic of China (Taiwan),1.11
+"Western Sahara (disputed territory between Morocco and the Sahrawi Arab Democratic Republic) (""Free Zone"" is a self proclaimed and de facto sovereign state)",3.65202
