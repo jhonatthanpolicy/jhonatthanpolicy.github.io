@@ -2,17 +2,27 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "width": 260,
   "height": 160,
+  "title": { "text": "China", "anchor": "start", "fontSize": 12 },
   "data": {
-    "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/JPN_NY.GDP.PCAP.CD.json",
+    "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/CHN_SP_DYN_TFRT_IN_json",
     "format": { "type": "json", "property": "data" }
   },
-  "mark": { "type": "line" },
+  "mark": { "type": "line", "strokeWidth": 2 },
   "encoding": {
-    "x": { "field": "year", "type": "temporal", "title": null, "axis": { "format": "%Y", "labelAngle": 0 } },
-    "y": { "field": "value", "type": "quantitative", "title": null },
+    "x": {
+      "field": "year",
+      "type": "temporal",
+      "title": null,
+      "axis": { "format": "%Y", "labelAngle": 0, "tickCount": 5 }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null
+    },
     "tooltip": [
       { "field": "year", "type": "temporal", "format": "%Y", "title": "Year" },
-      { "field": "value", "type": "quantitative", "title": "Value" }
+      { "field": "value", "type": "quantitative", "format": ".2f", "title": "Fertility rate" }
     ]
   }
 }
