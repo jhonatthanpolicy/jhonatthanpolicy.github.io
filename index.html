@@ -116,9 +116,11 @@
       <div class="card">
         <p><b>API description:</b></p>
         <ul>
-          <li><b>Base URL:</b> <span id="cc5_api_base">[BASE URL HERE]</span></li>
-          <li><b>Endpoint / parameters:</b> <span id="cc5_api_params">[PARAMS HERE]</span></li>
-          <li><b>Full final URL used:</b> <span id="cc5_api_full">[FULL URL HERE]</span></li>
+          <li><b>Base URL:</b> <span id="cc5_api_base">https://api.worldbank.org/v2/</span></li>
+          <li><b>Endpoint / parameters:</b> <span id="cc5_api_params">format=json (returns JSON)
+
+per_page=20000 (returns all observations in one call)</span></li>
+          <li><b>Full final URL used:</b> <span id="cc5_api_full">https://api.worldbank.org/v2/country/JPN;CHN;MEX/indicator/SP.DYN.TFRT.IN?format=json&per_page=20000</span></li>
         </ul>
       </div>
 
@@ -126,9 +128,9 @@
       <div class="chart" id="cc5_scrape_chart"></div>
       <p class="note">
         <b>Colab notebook link (public):</b>
-        <a href="[PASTE YOUR COLAB LINK HERE]" target="_blank" rel="noopener">[COLAB LINK]</a>
+        <a href="https://colab.research.google.com/drive/1b3HFXZy6PBDO5SELjSYn7D1WGPbepBFk#scrollTo=9tAVo7AJ7oLB" target="_blank" rel="noopener">[COLAB LINK]</a>
       </p>
-      <p class="note"><b>Commentary (≤25 words):</b> <span id="cc5_scrape_comment">[SOURCE + CHALLENGES + WHAT YOU DID]</span></p>
+      <p class="note"><b>Commentary :</b> <span id="cc5_scrape_comment">Used Python in Google Colab to scrape fertility data from Wikipedia, and visualised the top five countries using Vega-Lite.</span></p>
     </section>
 
     <!-- ========================= -->
