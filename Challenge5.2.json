@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "title": "Top 5 countries by fertility rate (scraped from Wikipedia)",
+  "title": "Top 5 countries by fertility rate 2023 (scraped from Wikipedia)",
   "data": {
     "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/cc5_fertility_scraped_tidy.csv",
     "format": { "type": "csv" }
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "filter": "datum.rank <= 5"
+      "filter": "datum.rank <= 6"
     }
   ],
   "mark": "bar",
@@ -37,3 +37,4 @@
     ]
   }
 }
+
