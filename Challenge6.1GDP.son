@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 260,
+  "height": 160,
+  "data": {
+    "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/JPN_NY.GDP.PCAP.CD.json",
+    "format": { "type": "json", "property": "data" }
+  },
+  "mark": { "type": "line" },
+  "encoding": {
+    "x": { "field": "year", "type": "temporal", "title": null, "axis": { "format": "%Y", "labelAngle": 0 } },
+    "y": { "field": "value", "type": "quantitative", "title": null },
+    "tooltip": [
+      { "field": "year", "type": "temporal", "format": "%Y", "title": "Year" },
+      { "field": "value", "type": "quantitative", "title": "Value" }
+    ]
+  }
+}
