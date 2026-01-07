@@ -1,1 +1,0 @@
-# jhonatthanpolicy.github.io
