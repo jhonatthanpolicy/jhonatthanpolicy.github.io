@@ -1,355 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio | Data Science Coding Challenges</title>
-
-  <!-- Vega libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <meta charset="utf-8">
+  <title>Jhonatthan Tibana | Data Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    :root {
-      --maxw: 1120px;
-      --gap: 16px;
-      --card-bg: #ffffff;
-      --page-bg: #fbfbfb;
-      --border: #e6e6e6;
-      --text: #111;
-      --muted: #444;
-      --radius: 14px;
-      --shadow: 0 1px 10px rgba(0,0,0,0.04);
-    }
-
     body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f7f7f7;
       margin: 0;
-      line-height: 1.45;
-      background: var(--page-bg);
-      color: var(--text);
+      padding: 0;
+      color: #111;
     }
 
-    header, main, footer {
-      max-width: var(--maxw);
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.2rem;
+    }
+
+    p {
+      color: #444;
+      max-width: 600px;
       margin: 0 auto;
-      padding: 22px;
     }
 
-    header { padding-top: 34px; }
-
-    h1 { margin: 0 0 10px; font-size: 1.9rem; }
-    h2 { margin: 38px 0 10px; padding-top: 22px; border-top: 1px solid var(--border); }
-    h3 { margin: 18px 0 10px; }
-
-    .note { color: var(--muted); font-size: 0.95rem; margin: 8px 0; }
-
-    .card {
-      background: #fafafa;
-      border: 1px solid var(--border);
-      padding: 12px 14px;
-      border-radius: var(--radius);
-    }
-
-    /* ✅ NEW: one-column stack (everything under the previous) */
-    .stack {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--gap);
-      align-items: stretch;
-    }
-
-    .chart-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 12px;
+    .nav {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      min-height: 360px;
-    }
-
-    .chart-card.small {
-      min-height: 240px;
-      padding: 10px;
-    }
-
-    .chart-slot {
-      flex: 1;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      min-height: 260px;
+      gap: 20px;
+      margin: 50px auto;
+      flex-wrap: wrap;
     }
 
-    .chart-card.small .chart-slot { min-height: 190px; }
+    .nav a {
+      text-decoration: none;
+      padding: 16px 26px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      background: white;
+      font-size: 1rem;
+      color: #0b57d0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-    .vega-embed { width: 100% !important; }
-    .vega-embed details { display: none; }
+    .nav a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
 
-    img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; background: #fff; }
-    code { background: #f1f1f1; padding: 2px 6px; border-radius: 6px; }
-
-    a { color: #0b57d0; }
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+      padding: 40px 20px;
+    }
   </style>
 </head>
 
 <body>
+
 <header>
-  <h1>Jhonatthan Tibana — Portfolio</h1>
-  <p class="note">
-    10 coding challenges (CC1–CC10). Charts embedded with <code>vegaEmbed</code>.
-    Replace placeholders with your <b>RAW GitHub links</b> to JSON chart specs.
+  <h1>Jhonatthan Tibana</h1>
+  <p>
+    Data Science & Policy Portfolio.  
+    Visual analysis of demographic change using open data.
   </p>
 </header>
 
-<main>
-  <!-- CC1 -->
-  <section id="cc1">
-    <h2>CC1. Hosting — Display charts in your own site</h2>
-    <div class="stack">
-      <div class="chart-card">
-        <div class="chart-slot" id="cc1_chart1"></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-slot" id="cc1_chart2"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CC2 -->
-  <section id="cc2">
-    <h2>CC2. Building — Create your own visualisations</h2>
-    <div class="stack">
-      <div class="chart-card"><div class="chart-slot" id="cc2_chart1"></div></div>
-      <div class="chart-card"><div class="chart-slot" id="cc2_chart2"></div></div>
-    </div>
-  </section>
-
-  <!-- CC3 -->
-  <section id="cc3">
-    <h2>CC3. Debate — Use a visualisation in policy commentary</h2>
-    <div class="card">
-      <p><b>Policy topic (≤25 words):</b> <span id="cc3_topic">[WRITE YOUR TOPIC HERE]</span></p>
-    </div>
-
-    <div class="stack" style="margin-top: 12px;">
-      <div class="chart-card">
-        <div class="chart-slot" id="cc3_chart1"></div>
-        <p class="note"><b>Commentary (≤25 words):</b> <span id="cc3_comment1">[WRITE COMMENT HERE]</span></p>
-      </div>
-
-      <div class="chart-card">
-        <div class="chart-slot" id="cc3_chart2"></div>
-        <p class="note"><b>Commentary (≤25 words):</b> <span id="cc3_comment2">[WRITE COMMENT HERE]</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CC4 -->
-  <section id="cc4">
-    <h2>CC4. Replication — Re-create, then improve someone else’s chart</h2>
-    <p class="note"><b>Original chart image (upload to /images):</b></p>
-    <img src="images/cc4_original.png" alt="Original chart (CC4)">
-
-    <div class="stack" style="margin-top: 12px;">
-      <div class="chart-card">
-        <div class="chart-slot" id="cc4_replica"></div>
-        <p class="note">Replica version (axes/titles/colours aligned).</p>
-      </div>
-      <div class="chart-card">
-        <div class="chart-slot" id="cc4_improved"></div>
-        <p class="note"><b>Improvement explanation (≤25 words):</b> <span id="cc4_explain">[WRITE WHAT YOU IMPROVED]</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CC5 -->
-  <section id="cc5">
-    <h2>CC5. Accessing data — Scraper and API</h2>
-
-    <h3>API chart</h3>
-    <div class="chart-card">
-      <div class="chart-slot" id="cc5_api_chart"></div>
-      <div class="card">
-        <p><b>API description:</b></p>
-        <ul>
-          <li><b>Base URL:</b> <span id="cc5_api_base">https://api.worldbank.org/v2/</span></li>
-          <li><b>Endpoint / parameters:</b> <span id="cc5_api_params">format=json, per_page=20000</span></li>
-          <li><b>Full final URL used:</b> <span id="cc5_api_full">https://api.worldbank.org/v2/country/JPN;CHN;MEX/indicator/SP.DYN.TFRT.IN?format=json&per_page=20000</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <h3 style="margin-top: 18px;">Scraper chart</h3>
-    <div class="chart-card">
-      <div class="chart-slot" id="cc5_scrape_chart"></div>
-      <p class="note"><b>Colab notebook link (public):</b>
-        <a href="https://colab.research.google.com/drive/1b3HFXZy6PBDO5SELjSYn7D1WGPbepBFk#scrollTo=9tAVo7AJ7oLB" target="_blank" rel="noopener">[COLAB LINK]</a>
-      </p>
-      <p class="note"><b>Commentary (≤25 words):</b>
-        <span id="cc5_scrape_comment">Used Python in Google Colab to scrape fertility data from Wikipedia, cleaned it to tidy format, and visualised the top countries.</span>
-      </p>
-    </div>
-  </section>
-
-  <!-- CC6 -->
-  <section id="cc6">
-    <h2>CC6. Loops — Build a dashboard (6 time series)</h2>
-    <p class="note"><b>Colab notebook link (public):</b>
-      <a href="[PASTE YOUR CC6 COLAB LINK HERE]" target="_blank" rel="noopener">[COLAB LINK]</a>
-    </p>
-
-    <!-- ✅ stacked instead of grid -->
-    <div class="stack">
-      <div class="chart-card small"><div class="chart-slot" id="cc6_chart1"></div></div>
-      <div class="chart-card small"><div class="chart-slot" id="cc6_chart2"></div></div>
-      <div class="chart-card small"><div class="chart-slot" id="cc6_chart3"></div></div>
-      <div class="chart-card small"><div class="chart-slot" id="cc6_chart4"></div></div>
-      <div class="chart-card small"><div class="chart-slot" id="cc6_chart5"></div></div>
-      <div class="chart-card small"><div class="chart-slot" id="cc6_chart6"></div></div>
-    </div>
-
-    <p class="note">These six embeds are generated by a JavaScript loop.</p>
-  </section>
-
-  <!-- CC7 -->
-  <section id="cc7">
-    <h2>CC7. Maps — Scotland + Wales (one coordinates, one choropleth)</h2>
-    <div class="stack">
-      <div class="chart-card">
-        <div class="chart-slot" id="cc7_scotland_map"></div>
-        <p class="note">Scotland map (choose either coordinates or choropleth).</p>
-      </div>
-      <div class="chart-card">
-        <div class="chart-slot" id="cc7_wales_map"></div>
-        <p class="note">Wales map (the other type).</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CC8 -->
-  <section id="cc8">
-    <h2>CC8. Big Data — Extract a story from millions of prices</h2>
-    <div class="stack">
-      <div class="chart-card"><div class="chart-slot" id="cc8_chart1"></div></div>
-      <div class="chart-card"><div class="chart-slot" id="cc8_chart2"></div></div>
-    </div>
-    <p class="note"><b>Explanation (≤50 words):</b> <span id="cc8_explain">[WRITE WHAT YOU DID + STORY FOUND]</span></p>
-  </section>
-
-  <!-- CC9 -->
-  <section id="cc9">
-    <h2>CC9. Two interactive charts (beyond tooltip / simple colour select)</h2>
-    <div class="stack">
-      <div class="chart-card"><div class="chart-slot" id="cc9_interactive1"></div></div>
-      <div class="chart-card"><div class="chart-slot" id="cc9_interactive2"></div></div>
-    </div>
-    <p class="note">Use sliders / dropdowns / clickable legend etc.</p>
-  </section>
-
-  <!-- CC10 -->
-  <section id="cc10">
-    <h2>CC10. Advanced Analysis and Machine Learning</h2>
-
-    <h3>Part 1 — Advanced analytics chart</h3>
-    <div class="chart-card">
-      <div class="chart-slot" id="cc10_analytics_chart"></div>
-    </div>
-
-    <h3>Part 2 — Machine learning</h3>
-    <p class="note"><b>Colab notebook link (public):</b>
-      <a href="https://colab.research.google.com/drive/1BwN-PrVSsZGBGw6QoHbGNqa_Qc3HFXZB?usp=sharing" target="_blank" rel="noopener">[COLAB LINK]</a>
-    </p>
-
-    <div class="card">
-      <p><b>Hypothesis (≤25 words):</b> <span id="cc10_hypothesis">[WRITE HYPOTHESIS HERE]</span></p>
-      <p><b>Commentary (≤25 words):</b> <span id="cc10_commentary">[WRITE FINDING HERE]</span></p>
-    </div>
-
-    <div class="chart-card" style="margin-top: 12px;">
-      <div class="chart-slot" id="cc10_ml_chart"></div>
-    </div>
-  </section>
-</main>
+<nav class="nav">
+  <a href="portfolio.html">📊 Coding Challenges Portfolio</a>
+  <a href="Project.html">📈 Final Data Project</a>
+</nav>
 
 <footer>
-  <p class="note">© <span id="year"></span> Jhonatthan Tibana</p>
+  © 2026 — Hosted on GitHub Pages
 </footer>
 
-<script>
-  function embedSpec(divId, rawUrl, opts = {}) {
-    const el = document.getElementById(divId);
-
-    if (!rawUrl || rawUrl.includes("PASTE_RAW_URL_HERE")) {
-      el.innerHTML = "<p class='note'>[Placeholder] Add RAW JSON link for <code>" + divId + "</code></p>";
-      return;
-    }
-
-    vegaEmbed("#" + divId, rawUrl, {
-      actions: { export: true, source: true, compiled: false, editor: true },
-      renderer: "canvas",
-      ...opts
-    }).catch(err => {
-      console.error("Embed failed:", divId, err);
-      el.innerHTML = "<p class='note'>Embed failed for " + divId + ". Check RAW link + console.</p>";
-    });
-  }
-
-  const chartLinks = {
-    // CC1
-    cc1_chart1: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Chart1.json",
-    cc1_chart2: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge1.2.json",
-
-    // CC2
-    cc2_chart1: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge2.1.json",
-    cc2_chart2: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/graph3.json",
-
-    // CC3
-    cc3_chart1: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Birthsperyear1970.json",
-    cc3_chart2: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge3.2.json",
-
-    // CC4
-    cc4_replica: "PASTE_RAW_URL_HERE",
-    cc4_improved: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge4.2.json",
-
-    // CC5
-    cc5_api_chart: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge5.1.json",
-    cc5_scrape_chart: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge5.2.json",
-
-    // CC7
-    cc7_scotland_map: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge7.2.json",
-    cc7_wales_map: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge7.1.json",
-
-    // CC9
-    cc9_interactive1: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge9.1.json",
-    cc9_interactive2: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge9.2.json",
-
-    // CC10
-    cc10_analytics_chart: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge10.1.json",
-    cc10_ml_chart: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge10.2.json"
-  };
-
-  Object.entries(chartLinks).forEach(([divId, rawUrl]) => embedSpec(divId, rawUrl));
-
-  // CC6 loop (still works, now stacked)
-  const cc6Links = [
-    "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge6.1GDP.json",
-    "PASTE_RAW_URL_HERE",
-    "PASTE_RAW_URL_HERE",
-    "PASTE_RAW_URL_HERE",
-    "PASTE_RAW_URL_HERE",
-    "PASTE_RAW_URL_HERE"
-  ];
-
-  cc6Links.forEach((rawUrl, i) => {
-    embedSpec("cc6_chart" + (i + 1), rawUrl, { width: "container", height: 180 });
-  });
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
+
