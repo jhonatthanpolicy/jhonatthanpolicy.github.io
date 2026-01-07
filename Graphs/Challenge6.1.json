@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Fertility Rate — China",
+    "subtitle": "World Bank: SP.DYN.TFRT.IN",
+    "anchor": "start",
+    "fontSize": 13,
+    "subtitleFontSize": 10
+  },
+  "width": 260,
+  "height": 160,
+  "data": {
+    "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Graphs/fertility_CHN%20(1).json",
+    "format": { "type": "json", "property": "data" }
+  },
+  "transform": [
+    { "calculate": "toNumber(datum.year)", "as": "year_num" },
+    { "calculate": "toNumber(datum.value)", "as": "value_num" },
+    { "filter": "isValid(datum.year_num) && isValid(datum.value_num)" }
+  ],
+  "mark": { "type": "line", "strokeWidth": 2 },
+  "encoding": {
+    "x": {
+      "field": "year_num",
+      "type": "quantitative",
+      "title": null,
+      "axis": { "tickCount": 5 }
+    },
+    "y": {
+      "field": "value_num",
+      "type": "quantitative",
+      "title": null,
+      "scale": { "zero": false }
+    },
+    "tooltip": [
+      { "field": "year_num", "type": "quantitative", "title": "Year", "format": ".0f" },
+      { "field": "value_num", "type": "quantitative", "title": "Fertility rate", "format": ".2f" }
+    ]
+  }
+}
