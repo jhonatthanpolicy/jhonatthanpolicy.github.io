@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Distribution of fertility rates across countries (2022)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/cc10_fertility_histogram.csv",
+    "format": { "type": "csv" }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "bin_start",
+      "type": "quantitative",
+      "title": "Fertility rate (births per woman)"
+    },
+    "x2": { "field": "bin_end" },
+    "y": { "field": "count", "type": "quantitative", "title": "Number of countries" },
+    "tooltip": [
+      { "field": "bin_start", "type": "quantitative", "title": "Bin start" },
+      { "field": "bin_end", "type": "quantitative", "title": "Bin end" },
+      { "field": "count", "type": "quantitative", "title": "Countries" }
+    ]
+  }
+}
