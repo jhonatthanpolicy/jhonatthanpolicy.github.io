@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "K-means clusters of countries by fertility rate (2022)",
   "data": {
-    "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/cc10_fertility_clusters_2022.csv",
+    "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/Data/cc10_fertility_clusters_2022.csv",
     "format": { "type": "csv" }
   },
   "mark": { "type": "point", "filled": true, "size": 80 },
