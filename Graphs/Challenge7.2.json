@@ -22,7 +22,7 @@
       "lookup": "properties.LAD25CD",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Alcohol_Prohibition_Areas_-_Scotland.csv",
+          "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/Data/Alcohol_Prohibition_Areas_-_Scotland.csv",
           "format": { "type": "csv" }
         },
         "key": "la_s_code",
