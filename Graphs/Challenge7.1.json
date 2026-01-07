@@ -42,7 +42,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/cadw_monuments_lonlat.csv",
+        "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/Data/cadw_monuments_lonlat.csv",
         "format": { "type": "csv" }
       },
       "mark": {
