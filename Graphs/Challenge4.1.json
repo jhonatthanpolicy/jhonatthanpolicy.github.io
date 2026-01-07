@@ -1,0 +1,121 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "background": "#fbf6f0",
+  "title": {
+    "text": "¿CÓMO AUMENTÓ LA POBLACIÓN?",
+    "subtitle": "Cifras en millones de personas",
+    "anchor": "start",
+    "color": "#0c0c0c",
+    "subtitleColor": "#0c0c0c",
+    "fontSize": 28,
+    "subtitleFontSize": 20,
+    "offset": 10
+  },
+  "width": 700,
+  "height": 420,
+  "data": {
+    "values": [
+      { "year": 1954, "pop_m": 12.7, "pop_label": "12,7" },
+      { "year": 1964, "pop_m": 17.4, "pop_label": "17,4" },
+      { "year": 1974, "pop_m": 22.9, "pop_label": "22,9" },
+      { "year": 1984, "pop_m": 28.7, "pop_label": "28,7" },
+      { "year": 1994, "pop_m": 35.3, "pop_label": "35,3" },
+      { "year": 2004, "pop_m": 41.6, "pop_label": "41,6" },
+      { "year": 2014, "pop_m": 46.6, "pop_label": "46,6" },
+      { "year": 2024, "pop_m": 51.6, "pop_label": "51,6" }
+    ]
+  },
+  "layer": [
+    {
+      "mark": { "type": "area", "color": "#e5d5b4", "opacity": 0.75 },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "title": null,
+            "labelColor": "#0c0c0c",
+            "labelFontSize": 18,
+            "labelPadding": 12,
+            "tickSize": 0,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "pop_m",
+          "type": "quantitative",
+          "scale": { "domainMin": 10, "nice": false },
+          "axis": {
+            "title": null,
+            "grid": false,
+            "labels": false,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "y2": { "datum": 10 }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#6a6a69",
+        "strokeDash": [8, 8],
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "pop_m", "type": "quantitative" },
+        "y2": { "datum": 10 }
+      }
+    },
+    {
+      "mark": { "type": "line", "color": "#d5025d", "strokeWidth": 7 },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": {
+          "field": "pop_m",
+          "type": "quantitative",
+          "scale": { "domainMin": 10, "nice": false },
+          "axis": {
+            "title": null,
+            "grid": false,
+            "labels": false,
+            "ticks": false,
+            "domain": false
+          }
+        }
+      }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 850, "color": "#d5025d" },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "pop_m", "type": "quantitative" },
+        "tooltip": [
+          { "field": "year", "type": "ordinal", "title": "Año" },
+          { "field": "pop_m", "type": "quantitative", "title": "Población (millones)", "format": ".1f" }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 26,
+        "fontWeight": "bold",
+        "color": "#0c0c0c",
+        "dy": -38,
+        "angle": -90
+      },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "pop_m", "type": "quantitative" },
+        "text": { "field": "pop_label", "type": "nominal" }
+      }
+    }
+  ],
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "domain": false }
+  }
+}
