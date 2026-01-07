@@ -1,0 +1,78 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 360,
+  "title": {
+    "text": "Fertility rate (births per woman) — High vs Low groups",
+    "subtitle": "World Bank SP.DYN.TFRT.IN (1960–2023) | Use dropdown to switch group",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start"
+  },
+
+  "data": {
+    "url": "https://api.worldbank.org/v2/country/NER;TCD;SOM;COD;MLI;JPN;KOR;ITA;ESP;DEU/indicator/SP.DYN.TFRT.IN?format=json&per_page=20000",
+    "format": { "type": "json", "property": "1" }
+  },
+
+  "transform": [
+    { "filter": "datum.value != null" },
+    { "calculate": "toNumber(datum.date)", "as": "year" },
+    { "filter": "datum.year >= 1960 && datum.year <= 2023" },
+    {
+      "calculate": "indexof(['Niger','Chad','Somalia','Congo, Dem. Rep.','Mali'], datum.country.value) >= 0 ? 'Highest group' : (indexof(['Japan','Korea, Rep.','Italy','Spain','Germany'], datum.country.value) >= 0 ? 'Lowest group' : 'Other')",
+      "as": "group"
+    },
+    { "filter": "datum.group != 'Other'" }
+  ],
+
+  "params": [
+    {
+      "name": "groupPick",
+      "value": "Highest group",
+      "bind": {
+        "input": "select",
+        "options": ["Highest group", "Lowest group"],
+        "name": "Show: "
+      }
+    }
+  ],
+
+  "transform": [
+    { "filter": "datum.value != null" },
+    { "calculate": "toNumber(datum.date)", "as": "year" },
+    { "filter": "datum.year >= 1960 && datum.year <= 2023" },
+    {
+      "calculate": "indexof(['Niger','Chad','Somalia','Congo, Dem. Rep.','Mali'], datum.country.value) >= 0 ? 'Highest group' : (indexof(['Japan','Korea, Rep.','Italy','Spain','Germany'], datum.country.value) >= 0 ? 'Lowest group' : 'Other')",
+      "as": "group"
+    },
+    { "filter": "datum.group != 'Other'" },
+    { "filter": "datum.group == groupPick" }
+  ],
+
+  "mark": { "type": "line", "strokeWidth": 2 },
+
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "title": "Year",
+      "axis": { "format": "d", "tickCount": 8 }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Births per woman"
+    },
+    "color": {
+      "field": "country.value",
+      "type": "nominal",
+      "title": "Country"
+    },
+    "tooltip": [
+      { "field": "country.value", "type": "nominal", "title": "Country" },
+      { "field": "year", "type": "quantitative", "title": "Year" },
+      { "field": "value", "type": "quantitative", "format": ".2f", "title": "Fertility rate" }
+    ]
+  }
+}

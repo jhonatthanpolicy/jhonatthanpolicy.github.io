@@ -1,0 +1,87 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Births per year (World)",
+    "subtitle": "Horizontal line shows 2023 births level (Y-axis truncated at 100 million)"
+  },
+  "data": {
+    "url": "https://ourworldindata.org/grapher/number-of-births-per-year.csv",
+    "format": { "type": "csv" }
+  },
+  "transform": [
+    {
+      "filter": "datum.Entity == 'World' && datum.Year >= 1980 && datum.Year <= 2023"
+    },
+    {
+      "calculate": "datum['Births - Sex: all - Age: all - Variant: estimates'] / 1000000",
+      "as": "Births_millions"
+    }
+  ],
+  "layer": [
+    {
+      "mark": { "type": "line" },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year"
+        },
+        "y": {
+          "field": "Births_millions",
+          "type": "quantitative",
+          "title": "Births (millions)",
+          "axis": { "format": ".0f" },
+          "scale": { "domainMin": 100 }
+        },
+        "tooltip": [
+          { "field": "Year", "type": "quantitative", "title": "Year" },
+          {
+            "field": "Births_millions",
+            "type": "quantitative",
+            "format": ",.1f",
+            "title": "Births (millions)"
+          }
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        { "filter": "datum.Year == 2023" }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "black",
+        "strokeDash": [4, 4],
+        "size": 1.5
+      },
+      "encoding": {
+        "y": {
+          "field": "Births_millions",
+          "type": "quantitative"
+        }
+      }
+    },
+
+    {
+      "transform": [
+        { "filter": "datum.Year == 2023" }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "dy": -6
+      },
+      "encoding": {
+        "y": {
+          "field": "Births_millions",
+          "type": "quantitative"
+        },
+        "x": { "value": 0 },
+        "text": { "value": "2023 level" }
+      }
+    }
+  ]
+}
+

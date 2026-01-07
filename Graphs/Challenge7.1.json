@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Wales — Scheduled Monuments (Cadw) on Wards Basemap",
+    "subtitle": [
+      "Mercator projection",
+      "Points = monuments (crosses)"
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "middle",
+    "color": "black"
+  },
+
+  "config": {
+    "background": "white",
+    "view": { "stroke": "transparent" }
+  },
+
+  "width": 450,
+  "height": 450,
+
+  "projection": {
+    "type": "mercator"
+  },
+
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/maps/geoWalWards.json",
+        "format": {
+          "type": "topojson",
+          "feature": "wards"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "white",
+        "strokeWidth": 0.2
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/refs/heads/main/cadw_monuments_lonlat.csv",
+        "format": { "type": "csv" }
+      },
+      "mark": {
+        "type": "point",
+        "shape": "cross",
+        "filled": false,
+        "size": 35,
+        "stroke": "#5d8a16a6",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          { "field": "Name", "type": "nominal", "title": "Monument" },
+          { "field": "BroadClass", "type": "nominal", "title": "Class" },
+          { "field": "Period", "type": "nominal", "title": "Period" },
+          { "field": "UnitaryAuthority", "type": "nominal", "title": "Authority" }
+        ]
+      }
+    }
+  ]
+}
