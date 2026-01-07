@@ -52,25 +52,12 @@
       border-radius: var(--radius);
     }
 
-    /* === Symmetric chart layout === */
-    .grid-2 {
+    /* ✅ NEW: one-column stack (everything under the previous) */
+    .stack {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: var(--gap);
       align-items: stretch;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      align-items: stretch;
-    }
-
-    /* Responsive: collapse to 1 column */
-    @media (max-width: 900px) {
-      .grid-2 { grid-template-columns: 1fr; }
-      .grid-3 { grid-template-columns: 1fr; }
     }
 
     .chart-card {
@@ -82,10 +69,9 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      min-height: 360px; /* makes two-col cards equal height */
+      min-height: 360px;
     }
 
-    /* For small multiples (CC6) */
     .chart-card.small {
       min-height: 240px;
       padding: 10px;
@@ -101,9 +87,8 @@
 
     .chart-card.small .chart-slot { min-height: 190px; }
 
-    /* Vega embed should fill the slot width */
     .vega-embed { width: 100% !important; }
-    .vega-embed details { display: none; } /* hides the "View Source" details block spacing if it appears */
+    .vega-embed details { display: none; }
 
     img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; background: #fff; }
     code { background: #f1f1f1; padding: 2px 6px; border-radius: 6px; }
@@ -125,7 +110,7 @@
   <!-- CC1 -->
   <section id="cc1">
     <h2>CC1. Hosting — Display charts in your own site</h2>
-    <div class="grid-2">
+    <div class="stack">
       <div class="chart-card">
         <div class="chart-slot" id="cc1_chart1"></div>
       </div>
@@ -138,7 +123,7 @@
   <!-- CC2 -->
   <section id="cc2">
     <h2>CC2. Building — Create your own visualisations</h2>
-    <div class="grid-2">
+    <div class="stack">
       <div class="chart-card"><div class="chart-slot" id="cc2_chart1"></div></div>
       <div class="chart-card"><div class="chart-slot" id="cc2_chart2"></div></div>
     </div>
@@ -151,7 +136,7 @@
       <p><b>Policy topic (≤25 words):</b> <span id="cc3_topic">[WRITE YOUR TOPIC HERE]</span></p>
     </div>
 
-    <div class="grid-2" style="margin-top: 12px;">
+    <div class="stack" style="margin-top: 12px;">
       <div class="chart-card">
         <div class="chart-slot" id="cc3_chart1"></div>
         <p class="note"><b>Commentary (≤25 words):</b> <span id="cc3_comment1">[WRITE COMMENT HERE]</span></p>
@@ -170,7 +155,7 @@
     <p class="note"><b>Original chart image (upload to /images):</b></p>
     <img src="images/cc4_original.png" alt="Original chart (CC4)">
 
-    <div class="grid-2" style="margin-top: 12px;">
+    <div class="stack" style="margin-top: 12px;">
       <div class="chart-card">
         <div class="chart-slot" id="cc4_replica"></div>
         <p class="note">Replica version (axes/titles/colours aligned).</p>
@@ -218,7 +203,8 @@
       <a href="[PASTE YOUR CC6 COLAB LINK HERE]" target="_blank" rel="noopener">[COLAB LINK]</a>
     </p>
 
-    <div class="grid-3">
+    <!-- ✅ stacked instead of grid -->
+    <div class="stack">
       <div class="chart-card small"><div class="chart-slot" id="cc6_chart1"></div></div>
       <div class="chart-card small"><div class="chart-slot" id="cc6_chart2"></div></div>
       <div class="chart-card small"><div class="chart-slot" id="cc6_chart3"></div></div>
@@ -233,7 +219,7 @@
   <!-- CC7 -->
   <section id="cc7">
     <h2>CC7. Maps — Scotland + Wales (one coordinates, one choropleth)</h2>
-    <div class="grid-2">
+    <div class="stack">
       <div class="chart-card">
         <div class="chart-slot" id="cc7_scotland_map"></div>
         <p class="note">Scotland map (choose either coordinates or choropleth).</p>
@@ -248,7 +234,7 @@
   <!-- CC8 -->
   <section id="cc8">
     <h2>CC8. Big Data — Extract a story from millions of prices</h2>
-    <div class="grid-2">
+    <div class="stack">
       <div class="chart-card"><div class="chart-slot" id="cc8_chart1"></div></div>
       <div class="chart-card"><div class="chart-slot" id="cc8_chart2"></div></div>
     </div>
@@ -258,11 +244,11 @@
   <!-- CC9 -->
   <section id="cc9">
     <h2>CC9. Two interactive charts (beyond tooltip / simple colour select)</h2>
-    <div class="grid-2">
+    <div class="stack">
       <div class="chart-card"><div class="chart-slot" id="cc9_interactive1"></div></div>
       <div class="chart-card"><div class="chart-slot" id="cc9_interactive2"></div></div>
     </div>
-    <p class="note">Use sliders / dropdowns / clickable legends etc.</p>
+    <p class="note">Use sliders / dropdowns / clickable legend etc.</p>
   </section>
 
   <!-- CC10 -->
@@ -349,7 +335,7 @@
 
   Object.entries(chartLinks).forEach(([divId, rawUrl]) => embedSpec(divId, rawUrl));
 
-  // CC6 uses a loop — set smaller heights for symmetry
+  // CC6 loop (still works, now stacked)
   const cc6Links = [
     "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge6.1GDP.json",
     "PASTE_RAW_URL_HERE",
@@ -367,4 +353,3 @@
 </script>
 </body>
 </html>
-
