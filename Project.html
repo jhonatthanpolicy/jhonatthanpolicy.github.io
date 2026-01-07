@@ -1,1 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project | Demography Dashboard</title>
+
+  <!-- Vega libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <style>
+    :root{
+      --maxw: 980px;
+      --bg: #fbfbfb;
+      --card: #ffffff;
+      --border: #e6e6e6;
+      --text: #111;
+      --muted: #444;
+      --radius: 14px;
+      --shadow: 0 1px 10px rgba(0,0,0,0.04);
+      --gap: 16px;
+    }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.45;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header, main, footer{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    h1{ margin: 0 0 6px; font-size: 2rem; }
+    h2{ margin: 34px 0 10px; padding-top: 18px; border-top: 1px solid var(--border); }
+    h3{ margin: 18px 0 10px; }
+
+    .note{ color: var(--muted); font-size: .95rem; margin: 8px 0; }
+
+    .card{
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+    }
+
+    .stack{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gap);
+      align-items: stretch;
+      margin-top: 12px;
+    }
+
+    .chart-card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 380px;
+    }
+
+    .chart-slot{
+      flex: 1;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vega-embed{ width: 100% !important; }
+    .vega-embed details{ display:none; }
+
+    .meta{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    @media (max-width: 900px){
+      .meta{ grid-template-columns: 1fr; }
+    }
+
+    code{
+      background: #f1f1f1;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    a{ color: #0b57d0; }
+  </style>
+</head>
+
+<body>
+<header>
+  <h1>Project — Demography & Birth Outcomes</h1>
+  <p class="note">
+    This page summarises the project using six charts (CC3, CC9 and CC10). Replace the bracketed text with your own project story.
+  </p>
+
+  <div class="card">
+    <p><b>Research question:</b> <span>[Write 1 sentence: what are you trying to explain/compare?]</span></p>
+    <p><b>Data sources:</b> World Bank indicators + supporting datasets used in your coding challenges.</p>
+  </div>
+</header>
+
+<main>
+  <!-- SECTION 1: Context / Motivation -->
+  <section id="context">
+    <h2>1) Context: Global births over time</h2>
+    <p class="note">
+      What this chart shows and why it matters (2–3 sentences). Example: global trend, turning points, policy relevance.
+    </p>
+
+    <div class="stack">
+      <div class="chart-card">
+        <div class="chart-slot" id="chart_births_world"></div>
+        <div class="card">
+          <p><b>Key takeaway:</b> <span>[Write ≤25 words summarising what the viewer should notice]</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Comparison / Evidence -->
+  <section id="comparison">
+    <h2>2) Evidence: Comparing countries / outcomes</h2>
+    <p class="note">
+      Explain how this second chart supports your argument. Keep it short and concrete: “X rises when Y falls”, “Country A diverges after…”, etc.
+    </p>
+
+    <div class="stack">
+      <div class="chart-card">
+        <div class="chart-slot" id="chart_cc3_2"></div>
+        <div class="card">
+          <p><b>Key takeaway:</b> <span>[Write ≤25 words]</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Interactivity (CC9) -->
+  <section id="interactive">
+    <h2>3) Interactive exploration</h2>
+    <p class="note">
+      These charts allow the user to explore the data using interactive controls (not just tooltip). Describe what the user can change and why it helps.
+    </p>
+
+    <div class="stack">
+      <div class="chart-card">
+        <div class="chart-slot" id="chart_cc9_1"></div>
+        <div class="card">
+          <p><b>How to use:</b> <span>[Example: select countries / slider year / choose metric]</span></p>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-slot" id="chart_cc9_2"></div>
+        <div class="card">
+          <p><b>How to use:</b> <span>[Explain the control and what changes]</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Advanced analytics (CC10.1) -->
+  <section id="analytics">
+    <h2>4) Advanced analytics</h2>
+    <p class="note">
+      Describe what “advanced” method you applied (e.g., histogram/distribution, detrending/regression, heat map, etc.) and what it reveals.
+    </p>
+
+    <div class="stack">
+      <div class="chart-card">
+        <div class="chart-slot" id="chart_cc10_1"></div>
+        <div class="card">
+          <p><b>Key takeaway:</b> <span>[Write ≤25 words]</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Machine learning (CC10.2) -->
+  <section id="ml">
+    <h2>5) Machine learning result</h2>
+    <p class="note">
+      State your hypothesis and what the model found. Keep it simple: what were inputs/target, what algorithm, what the result suggests.
+    </p>
+
+    <div class="stack">
+      <div class="chart-card">
+        <div class="chart-slot" id="chart_cc10_2"></div>
+
+        <div class="meta">
+          <div class="card">
+            <p><b>Hypothesis (≤25 words):</b><br><span>[Write hypothesis]</span></p>
+          </div>
+          <div class="card">
+            <p><b>Finding (≤25 words):</b><br><span>[Write conclusion]</span></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="note" style="margin:0;">
+            <b>Reproducibility:</b> Link your Colab notebook + data files used for training.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional: references -->
+  <section id="refs">
+    <h2>References</h2>
+    <div class="card">
+      <p class="note" style="margin:0;">
+        <b>Charts embedded from RAW GitHub JSON specs.</b> If a chart fails, confirm the RAW link opens a JSON file in the browser.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p class="note">© <span id="year"></span> Jhonatthan Tibana</p>
+</footer>
+
+<script>
+  function embedSpec(divId, rawUrl, opts = {}) {
+    const el = document.getElementById(divId);
+    if (!rawUrl) {
+      el.innerHTML = "<p class='note'>Missing RAW link for <code>" + divId + "</code></p>";
+      return;
+    }
+    vegaEmbed("#" + divId, rawUrl, {
+      actions: { export: true, source: true, compiled: false, editor: true },
+      renderer: "canvas",
+      ...opts
+    }).catch(err => {
+      console.error("Embed failed:", divId, err);
+      el.innerHTML = "<p class='note'>Embed failed. Check console + RAW link.</p>";
+    });
+  }
+
+  // ===== Your 6 project charts (RAW links) =====
+  const links = {
+    births_world: "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Birthsperyear1970.json",
+    cc3_2:        "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge3.2.json",
+    cc9_1:        "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge9.1.json",
+    cc9_2:        "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge9.2.json",
+    cc10_1:       "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge10.1.json",
+    cc10_2:       "https://raw.githubusercontent.com/jhonatthanpolicy/jhonatthanpolicy.github.io/main/Challenge10.2.json"
+  };
+
+  // ===== Embed charts (stacked vertically) =====
+  embedSpec("chart_births_world", links.births_world);
+  embedSpec("chart_cc3_2", links.cc3_2);
+  embedSpec("chart_cc9_1", links.cc9_1);
+  embedSpec("chart_cc9_2", links.cc9_2);
+  embedSpec("chart_cc10_1", links.cc10_1);
+  embedSpec("chart_cc10_2", links.cc10_2);
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
 
